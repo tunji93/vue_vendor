@@ -9,16 +9,27 @@
         <Search></Search>
       </section>
     </section>
-    <section class="header-right">Right</section>
+    <section class="header-right">
+      <section class="header-right-icons">
+        <Icons></Icons>
+      </section>
+      <section class="header-right-menu">
+        <Bar></Bar>
+      </section>
+    </section>
   </section>
 </template>
 
 
 <script>
-  import Search from './Search.vue'
+  import Search from './Search.vue';
+  import Icons from './Icons.vue'
+  import Bar from './Bar.vue'
   export default {
     components: {
-      Search
+      Search,
+      Icons,
+      Bar
     },
     data () {
       return {
@@ -69,6 +80,23 @@
   }
   .header-left-search {
     width:60%
+  }
+  .header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+    height:80%
+  }
+  .header-right-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%
+  }
+  .header-right-menu {
+    width: 40%;
+    height:100%
   }
   
 </style>
