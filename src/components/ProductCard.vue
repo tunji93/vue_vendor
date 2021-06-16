@@ -27,7 +27,7 @@
         </section>
         
         <section class="bottom">
-            <div class="bottom-button"><CartButton></CartButton></div>
+            <div class="bottom-button"><CartButton text="Add to cart"></CartButton></div>
             <div class="bottom-select"><CartSelect></CartSelect></div>
         </section>
     </section>

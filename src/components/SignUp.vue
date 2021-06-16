@@ -1,18 +1,26 @@
 <template>
     <section class="container">
-        <h1 class="title">Log in</h1>
+        <h1 class="title">Sign Up</h1>
         <div class="details">
             <div class="input-container">
                 <i class="fa fa-envelope"></i>
-                <input type="email" placeholder="your email">
+                <input type="text" placeholder="name">
+            </div>
+            <div class="input-container">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="email">
             </div>
             <div class="input-container">
                 <i class="fa fa-lock"></i>
                 <input type="password" placeholder="your password">
             </div>
+            <div class="input-container">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="repeat password">
+            </div>
         </div>
         <div class="button">
-                <cart-button text="Log in"></cart-button>
+                <cart-button text="Sign up"></cart-button>
         </div>
     </section>
 </template>
@@ -31,7 +39,7 @@ export default {
     .container {
         background-color: #fff;
         width: 60%;
-        height: 12rem;
+        height: 15rem;
         padding: 0px 0px 5px 0px;
         margin: auto;
         border: 1px solid lightgray;
@@ -51,7 +59,7 @@ export default {
         margin: 0px;
     }
     .details {
-        height: 5rem;
+        height: 8rem;
         display: flex;
         flex-direction: column;
         
@@ -70,6 +78,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 4px;
     }
     input, input:focus {
         border: none;

@@ -21,7 +21,7 @@
                     <h1>Price: ₦ 100</h1>
                 </div>
                 <div class="bottom-right">
-                    <div class="bottom-select"><CartSelect></CartSelect></div>
+                    <div class="bottom-select"><CartSelect text="Add to cart"></CartSelect></div>
                     <div class="bottom-button"><CartButton></CartButton></div>
                     
                 </div>
