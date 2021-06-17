@@ -1,9 +1,7 @@
 <template>
   <main>
     <Header></Header>
-    
-    <sign-up></sign-up>
-    
+    <router-view></router-view>
   </main>
 </template>
 
@@ -30,5 +28,6 @@ export default {
   border: none;
   margin: 0;
 }
+
 
 </style>

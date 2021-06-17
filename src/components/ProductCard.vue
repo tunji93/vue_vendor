@@ -51,7 +51,7 @@ export default {
         background-color: #fff;
         border: 1px solid lightgray;
         padding: 5px;
-        margin: 1rem;
+        margin: 8px  ;
         display: flex;
         flex-direction: column;
         
