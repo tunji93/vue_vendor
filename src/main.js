@@ -46,12 +46,7 @@ const store = new Vuex.Store({
      },
      actions: {
       fetchData(context) {
-        //let data 
-        //const url = 'https://api.nytimes.com/svc/books/v3/lists/best-sellers/history.json?api-key=6ckHPPnuuh8udmahwODzUmyZVtPJvfki'
-        //const url = 'https://api.nytimes.com/svc/books/v3/lists/history/hardcover-fiction/20.json?api-key=6ckHPPnuuh8udmahwODzUmyZVtPJvfki'
-        //const key = '6ckHPPnuuh8udmahwODzUmyZVtPJvfki'
-       //const key = 'AIzaSyDr8NqD6brIZddXwBCmUl0Fwt3G7OyTnOo'
-        //const url = `https://www.googleapis.com/books/v1/volumes?q=flowers+subject&filter=paid-ebooks:keyes&key=${key}`
+        
           
         const url = 'https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/new'
           axios.get(url).then( (res) => {
@@ -60,7 +55,7 @@ const store = new Vuex.Store({
                 element.amount = (Math.random() * 100).toFixed(2)
               });
               context.commit('fetchData', data)
-              console.log(data)
+              
             });
             
           
@@ -70,7 +65,7 @@ const store = new Vuex.Store({
         const url = `https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/books/${id}`
         axios.get(url).then((res)=> {
           context.commit('setBook', res)
-          console.log(res)
+          
 
         })
       }
