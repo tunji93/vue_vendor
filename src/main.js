@@ -13,7 +13,7 @@ import card from './components/card.vue'
 Vue.use(Router)
 Vue.use(Vuex)
 Vue.config.productionTip = false
-
+const proxy = `https://cors-anywhere.herokuapp.com/`
 const router = new Router({
   mode: 'history',
   routes: [
@@ -48,7 +48,7 @@ const store = new Vuex.Store({
       fetchData(context) {
         
           
-        const url = 'https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/new'
+        const url = `${proxy}https://api.itbook.store/1.0/new`
           axios.get(url).then( (res) => {
               let data = res.data.books
               data.forEach(element => {
@@ -62,7 +62,7 @@ const store = new Vuex.Store({
       },
       setBook(context,id) {
         
-        const url = `https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/books/${id}`
+        const url = `${proxy}https://api.itbook.store/1.0/books/${id}`
         axios.get(url).then((res)=> {
           context.commit('setBook', res)
           
