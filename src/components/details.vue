@@ -29,7 +29,7 @@
                 </div>
                 <div class="container-right-price">
                     <i class="fa fa-usd" aria-hidden="true"></i>
-                    <h1>{{data.price.slice(1)}}</h1>
+                    <h1>{{data.price}}</h1>
                     <span>+</span>
                     <p>Shipping costs</p>
 
@@ -58,7 +58,10 @@
 <script>
 
 export default {
-    
+    components: {
+        CartButton,
+        CartSelect
+    },
     props:['id'],
     computed: {
             data() {

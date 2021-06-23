@@ -1,115 +1,79 @@
 <template>
-    <section class="container">
-        <section class="top">
-            <div class="top-img">
-                <img src="../assets/logo.png" alt="">
-            </div>
-            <div class="top-text">
-                <div class="top-text-right">
-                    <h3>item 1</h3>
-                </div>
-                <div class="top-text-icon">
-                    <i class="fa fa-heart"></i>
-                </div>
-            </div>
-        </section>
-        <section class="middle">
-            <p>Giving information on its origins, as well as a random Lipsum generator.</p>
-            <div class="middle-container">
-                <div class="middle-container-left">
-                    <div class="middle-container-left-star"><i class="fa fa-star"></i></div>
-                </div>
-                <div class="middle-container-right">
-                    <h1>₦ 100</h1>
-                </div>
-            </div>
-            <div class="middle-container-left-text"><h5>4 Reviews</h5></div>
-        </section>
-        
-        <section class="bottom">
-            <div class="bottom-button"><CartButton text="Add to cart"></CartButton></div>
-            <div class="bottom-select"><CartSelect></CartSelect></div>
-        </section>
-    </section>
+    <router-link :to='link'>
+        <div class="card">
+            <img :src="obj.image" alt="image">
+            <div><p>a</p></div>
+            <h5 class="title">{{obj.title}}</h5>
+            <h2 class="price"><i class="fa fa-usd" aria-hidden="true"></i>{{obj.amount}}</h2>
+        </div>
+    </router-link>
 </template>
 
 <script>
-import CartButton from './CartButton.vue'
-import CartSelect from './CartSelect.vue'
-export default {
-    components:{
-        CartButton,
-        CartSelect,
+    export default {
+        props: ["obj"],
+        computed: {
+            link() {
+                return `/productdetails/${this.obj.isbn13}`
+            }
+        }
+        
     }
-}
 </script>
 
+
+
+
 <style scoped>
-    .container {
-        width: 20rem;
-        height: fit-content;
+    .card {
+        width: 10rem;
+        height: 16rem;
+        border: 1px solid #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px;
         background-color: #fff;
-        border: 1px solid lightgray;
-        padding: 5px;
-        margin: 8px  ;
-        display: flex;
-        flex-direction: column;
-        
+        border-radius: 4px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
     }
-    .container:hover {
-        border: 1px solid #51bafc;
+    .card:hover {
+        border: 1px solid #3C99DC;
     }
-    .top {
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-        
+    .card > img {
+        height: 50%;
+        margin: 3px
     }
-    .top-img {
-        border: 1px solid darkgrey;
-        margin-bottom: none;
+    .card > div {
+        width: 100%;
+        height: 2px;
+       color: #3C99DC;
+       background-color: #3C99DC;
+       font-size: 2px;
     }
-    .top-text {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 1.5rem;
-        color: darkslategray;
-    }
-    .fa {
-        color: none
-    }
-    .middle {
-        display: flex;
-        flex-direction: column;
-        color: lightslategray;
-        
-    }
-    .middle > p {
-        text-align: left;
-        margin: 1rem 5px
-    }
-    .middle-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 1rem;
-        color: darkgrey
-        
-    }
-    .middle-container-left-text >h5 {
-        margin: 0px 0px;
-        text-align: left;
-        height: 1rem
-       
+    .card > p {
+        margin: 0px 7px ;
+        text-align: center;
+        color:#66D3FA
     }
     
-    .bottom {
-        border-top: 1px solid lightgray;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 8px ;
-        margin-top: 8px
+    
+    .title {
+        font-weight:bold;
+        font-size: 15px;
+        margin: 8px 7px;
+        text-align: center;
+        
     }
+    .card > h2 {
+        margin-bottom: 3px;
+    }
+    i {
+        font-size: 19px;
+        margin-right: 3px;
+    }
+    
 </style>

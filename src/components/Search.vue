@@ -3,9 +3,9 @@
 		<input
 			class="input is-rounded"
 			type="text"
-			v-model="value"
+			
 			placeholder="Search"
-			@keyup="search(value)"
+			
 		>
 		<span class="icon is-small is-left">
 			<i class="fa fa-search"></i>

@@ -3,7 +3,7 @@
     <section class="header-left">
       <section class="header-left-logo">
         <img src="../assets/logo.png" alt="logo" class="header-left-logo-img">
-        <h3 class="header-left-logo-text">COM</h3>
+        <h3 class="header-left-logo-text">Books</h3>
       </section>
       <section class="header-left-search">
         <Search></Search>
@@ -58,9 +58,11 @@
     height: 3rem;
     padding-right: 10px;
     
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
   }
   .header-left {
     display: flex;

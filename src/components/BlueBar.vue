@@ -15,10 +15,10 @@ export default {
     .container{
   background: rgb(81, 186, 252);
   color: #fff;
-  padding: 144px 24px;
+  padding: 14px 24px;
   text-align: center;
   margin-top: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   height: 4rem;
 }
 </style>
