@@ -7,11 +7,12 @@ import Homepage from './pages/Homepage.vue'
 import Login from './components/Login.vue'
 import Signup from './components/SignUp.vue'
 import ProductDetails from './components/ProductDetails.vue'
-//import details from './components/details.vue'
-import card from './components/card.vue'
+import Cart from './components/card.vue'
+
 
 Vue.use(Router)
 Vue.use(Vuex)
+const proxy = `https://api.allorigins.win/get?url=`
 Vue.config.productionTip = false
 
 const router = new Router({
@@ -21,7 +22,7 @@ const router = new Router({
     { path: '/login', component: Login },
     { path: '/signup', component: Signup},
     { path: '/productdetails/:id', component: ProductDetails, props:true },
-    { path: '/test', component: card },
+    { path: '/test', component: Cart },
 
   ]
 })
@@ -48,9 +49,9 @@ const store = new Vuex.Store({
       fetchData(context) {
         
           
-        const url = 'https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/new'
+          const url = `${proxy}${encodeURIComponent("https://api.itbook.store/1.0/new")}`;
           axios.get(url).then( (res) => {
-              let data = res.data.books
+            const data = JSON.parse(res.data.contents).books
               data.forEach(element => {
                 element.amount = (Math.random() * 100).toFixed(2)
               });
@@ -62,9 +63,12 @@ const store = new Vuex.Store({
       },
       setBook(context,id) {
         
-        const url = `https://thingproxy.freeboard.io/fetch/https://api.itbook.store/1.0/books/${id}`
+        const url_ = `https://api.itbook.store/1.0/books/${id}`;
+        const url = `${proxy}${encodeURI(url_)}`
         axios.get(url).then((res)=> {
-          context.commit('setBook', res)
+          const data = JSON.parse(res.data.contents)
+          console.log(data)
+          context.commit('setBook', data)
           
 
         })

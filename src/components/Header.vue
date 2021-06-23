@@ -2,8 +2,8 @@
   <section class="header">
     <section class="header-left">
       <section class="header-left-logo">
-        <img src="../assets/logo.png" alt="logo" class="header-left-logo-img">
-        <h3 class="header-left-logo-text">Books</h3>
+        <router-link to='/'><i class="fa fa-tty" aria-hidden="true"></i></router-link>
+        <h3 class="header-left-logo-text">Booksplus</h3>
       </section>
       <section class="header-left-search">
         <Search></Search>
@@ -76,9 +76,15 @@
     align-items: center;
     width: 30%
   }
-  .header-left-logo-img{
+  .header-left-logo> h3 {
+    font-size: 15px;
+    color: #00008b
+  }
+  .fa-tty{
     width:40%;
     height: 70%;
+    color: rgb(81, 186, 252);
+    font-size: 40px;
   }
   .header-left-search {
     width:60%

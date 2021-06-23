@@ -3,7 +3,7 @@
         <div class="container">
             <div class="container-left">
                 <div class="container-left-top">
-                    <i class=" chev fa fa-angle-left" aria-hidden="true"></i>
+                    <router-link to='/'><i class=" chev fa fa-angle-left" aria-hidden="true"></i></router-link>
                     <h3>BACK TO LIST</h3>
                 </div>
                 <div class="container-left-bottom">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="container-right-price">
                     <i class="fa fa-usd" aria-hidden="true"></i>
-                    <h1>{{data.price.slice(1)}}</h1>
+                    <h1>1.99</h1>
                     <span>+</span>
                     <p>Shipping costs</p>
 
@@ -62,7 +62,7 @@ export default {
     props:['id'],
     computed: {
             data() {
-                return this.$store.state.productDetails.data
+                return this.$store.state.productDetails
             }
     },
     mounted() {

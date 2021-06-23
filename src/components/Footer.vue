@@ -49,6 +49,10 @@
 
 </template>
 <style scoped>
+footer {
+    position: fixed;
+    bottom: 0;
+}
 
 .footer-distributed{
  background-color: #292c2f;
@@ -56,9 +60,9 @@
  box-sizing: border-box;
  width: 100%;
  text-align: left;
- font: bold 16px sans-serif;
- 
- padding: 5px 50px;
+ font: bold 10px sans-serif;
+ height: 3rem;
+ padding: 2px 50px;
  margin-top: 10px;
 }
  
@@ -75,7 +79,7 @@
  
 .footer-distributed h3{
  color:  #ffffff;
- font: normal 36px 'Cookie', cursive;
+ font: normal 16px 'Cookie', cursive;
  margin: 0;
 }
  
@@ -99,7 +103,7 @@
  
 .footer-distributed .footer-company-name{
  color:  #8f9296;
- font-size: 14px;
+ font-size: 9px;
  font-weight: normal;
  margin: 0;
 }
@@ -112,7 +116,7 @@
 .footer-distributed .footer-center i{
  background-color:  #33383b;
  color: #ffffff;
- font-size: 25px;
+ font-size: 15px;
  width: 38px;
  height: 38px;
  border-radius: 50%;
@@ -123,7 +127,7 @@
 }
  
 .footer-distributed .footer-center i.fa-envelope{
- font-size: 17px;
+ font-size: 7px;
  line-height: 38px;
 }
  
@@ -137,7 +141,7 @@
 .footer-distributed .footer-center p span{
  display:block;
  font-weight: normal;
- font-size:14px;
+ font-size:8px;
  line-height:2;
 }
  
@@ -153,7 +157,7 @@
 .footer-distributed .footer-company-about{
  line-height: 20px;
  color:  #92999f;
- font-size: 13px;
+ font-size: 8px;
  font-weight: normal;
  margin: 0;
 }
@@ -161,13 +165,13 @@
 .footer-distributed .footer-company-about span{
  display: block;
  color:  #ffffff;
- font-size: 14px;
+ font-size: 9px;
  font-weight: bold;
  margin-bottom: 20px;
 }
  
 .footer-distributed .footer-icons{
- margin-top: 25px;
+ margin-top: 12px;
 }
  
 .footer-distributed .footer-icons a{
@@ -178,7 +182,7 @@
  background-color:  #33383b;
  border-radius: 2px;
  
- font-size: 20px;
+ font-size: 10px;
  color: #ffffff;
  text-align: center;
  line-height: 35px;
