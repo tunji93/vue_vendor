@@ -13,7 +13,7 @@ import card from './components/card.vue'
 Vue.use(Router)
 Vue.use(Vuex)
 Vue.config.productionTip = false
-const proxy = `http://alloworigin.com/get?url=`
+const proxy = `https://cors-anywhere.herokuapp.com/`
 const router = new Router({
   mode: 'history',
   routes: [
