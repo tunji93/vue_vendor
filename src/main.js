@@ -13,7 +13,7 @@ import card from './components/card.vue'
 Vue.use(Router)
 Vue.use(Vuex)
 Vue.config.productionTip = false
-const proxy = `https://cors.bridged.cc/`
+const proxy = `https://api.allorigins.win/get?url=`
 const router = new Router({
   mode: 'history',
   routes: [
@@ -47,10 +47,10 @@ const store = new Vuex.Store({
      actions: {
       fetchData(context) {
         
-          
-        const url = `${proxy}<https://api.itbook.store/1.0/new>`
+         
+          const url = `${proxy}${encodeURIComponent("https://api.itbook.store/1.0/new")}`;
           axios.get(url).then( (res) => {
-              let data = res.data.books
+              const data = JSON.parse(res.data.contents).books;
               data.forEach(element => {
                 element.amount = (Math.random() * 100).toFixed(2)
               });
@@ -62,8 +62,10 @@ const store = new Vuex.Store({
       },
       setBook(context,id) {
         
-        const url = `${proxy}<https://api.itbook.store/1.0/books/${id}>`
+        const uri = `https://api.itbook.store/1.0/books/${id}`;
+        const url = `${proxy}${encodeURI(uri)}`;
         axios.get(url).then((res)=> {
+          res.data = JSON.parse(res.data.contents);
           context.commit('setBook', res)
           
 
