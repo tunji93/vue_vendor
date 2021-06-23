@@ -14,7 +14,7 @@ Vue.use(Router)
 Vue.use(Vuex)
 const proxy = `https://api.allorigins.win/get?url=`
 Vue.config.productionTip = false
-
+const proxy = `https://api.allorigins.win/get?url=`
 const router = new Router({
   mode: 'history',
   routes: [
