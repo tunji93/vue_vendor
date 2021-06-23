@@ -14,7 +14,7 @@ Vue.use(Router)
 Vue.use(Vuex)
 const proxy = `https://api.allorigins.win/get?url=`
 Vue.config.productionTip = false
-const proxy = `https://api.allorigins.win/get?url=`
+
 const router = new Router({
   mode: 'history',
   routes: [
@@ -67,7 +67,7 @@ const store = new Vuex.Store({
         const url = `${proxy}${encodeURI(url_)}`
         axios.get(url).then((res)=> {
           const data = JSON.parse(res.data.contents)
-          console.log(data)
+          
           context.commit('setBook', data)
           
 
